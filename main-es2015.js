@@ -44,10 +44,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const routes = [
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'home', component: _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"] },
+    { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"] },
     { path: 'about', component: _email_page_email_page_component__WEBPACK_IMPORTED_MODULE_2__["EmailPageComponent"] },
-    { path: '**', redirectTo: '/home' }
+    { path: '**', redirectTo: '' }
 ];
 class AppRoutingModule {
 }
