@@ -171,8 +171,10 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EmailPageComponent", function() { return EmailPageComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+
 
 
 
@@ -205,19 +207,25 @@ function EmailPageComponent_button_20_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
 class EmailPageComponent {
-    constructor() {
+    constructor(router) {
+        this.router = router;
         this.email = '';
         this.showSuccessMessage = false;
+    }
+    navigateToRoot() {
+        this.router.navigate(['']);
+        window.scroll({ top: 0, behavior: 'smooth' });
     }
     sendEmail() {
         this.email = '';
         this.showSuccessMessage = true;
     }
 }
-EmailPageComponent.ɵfac = function EmailPageComponent_Factory(t) { return new (t || EmailPageComponent)(); };
-EmailPageComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: EmailPageComponent, selectors: [["ng-component"]], decls: 21, vars: 4, consts: [[1, "header-container"], [1, "header-logo"], [1, "header-container", "mt-0"], [2, "padding-top", "10rem"], [1, "flex-row-container", "mt-0"], [1, "col-12", "flex-center"], ["src", "../../assets/two-guys-building-robocop.svg", "alt", "Kiwi standing on oval", 1, "col-12"], [1, "flex-row-container", "pb-10", "mt-0"], [1, "col-12"], [2, "text-align", "center"], ["style", "text-align: center", 4, "ngIf"], ["style", "text-align: center", "class", "success-message", 4, "ngIf"], [3, "ngSubmit"], ["class", "flex-center", "style", "margin-bottom: 3rem", 4, "ngIf"], [1, "col-12", "relative", "flex-center"], ["type", "submit", "class", "btn", "style", "padding-left: 4rem; padding-right: 4rem", 4, "ngIf"], [1, "success-message", 2, "text-align", "center"], [1, "flex-center", 2, "margin-bottom", "3rem"], ["autocomplete", "off", "name", "email", "type", "email", "value", "", 3, "ngModel", "ngModelChange"], ["type", "submit", 1, "btn", 2, "padding-left", "4rem", "padding-right", "4rem"]], template: function EmailPageComponent_Template(rf, ctx) { if (rf & 1) {
+EmailPageComponent.ɵfac = function EmailPageComponent_Factory(t) { return new (t || EmailPageComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"])); };
+EmailPageComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: EmailPageComponent, selectors: [["ng-component"]], decls: 21, vars: 4, consts: [[1, "header-container"], [1, "header-logo", 3, "click"], [1, "header-container", "mt-0"], [2, "padding-top", "10rem"], [1, "flex-row-container", "mt-0"], [1, "col-12", "flex-center"], ["src", "../../assets/two-guys-building-robocop.svg", "alt", "Kiwi standing on oval", 1, "col-12"], [1, "flex-row-container", "pb-10", "mt-0"], [1, "col-12"], [2, "text-align", "center"], ["style", "text-align: center", 4, "ngIf"], ["style", "text-align: center", "class", "success-message", 4, "ngIf"], [3, "ngSubmit"], ["class", "flex-center", "style", "margin-bottom: 3rem", 4, "ngIf"], [1, "col-12", "relative", "flex-center"], ["type", "submit", "class", "btn", "style", "padding-left: 4rem; padding-right: 4rem", 4, "ngIf"], [1, "success-message", 2, "text-align", "center"], [1, "flex-center", 2, "margin-bottom", "3rem"], ["autocomplete", "off", "name", "email", "type", "email", "value", "", 3, "ngModel", "ngModelChange"], ["type", "submit", 1, "btn", 2, "padding-left", "4rem", "padding-right", "4rem"]], template: function EmailPageComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "h1", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function EmailPageComponent_Template_h1_click_1_listener() { return ctx.navigateToRoot(); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " LAAT ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -260,14 +268,14 @@ EmailPageComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefin
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.showSuccessMessage);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.showSuccessMessage);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["NgIf"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgForm"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgModel"]], styles: ["input[type=email][_ngcontent-%COMP%] {\n  height: 2rem;\n  border: 0;\n  width: calc(100% - 2px);\n  max-width: 24rem;\n  font-size: 2rem;\n  line-height: 3;\n  margin-left: 1px;\n  box-shadow: -1px 2px 0px -1px #848484, 1px 2px 0px -1px #848484;\n  transition: box-shadow 0.3s;\n  outline: none;\n}\n\ninput[type=text][_ngcontent-%COMP%]:focus {\n  outline: none;\n  box-shadow: -8px 10px 0px -7px #4EA6EA, 8px 10px 0px -7px #4EA6EA;\n}\n\np[_ngcontent-%COMP%] {\n  font-size: 1.25rem;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZW1haWwtcGFnZS9DOlxcVXNlcnNcXE5pbHNcXFByb2plY3RzXFxsYWF0LnNob3BcXGxhYXQvc3JjXFxhcHBcXGVtYWlsLXBhZ2VcXGVtYWlsLXBhZ2UuY29tcG9uZW50LnNhc3MiLCJzcmMvYXBwL2VtYWlsLXBhZ2UvZW1haWwtcGFnZS5jb21wb25lbnQuc2FzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFlBQUE7RUFDQSxTQUFBO0VBQ0EsdUJBQUE7RUFDQSxnQkFBQTtFQUNBLGVBQUE7RUFDQSxjQUFBO0VBQ0EsZ0JBQUE7RUFDQSwrREFBQTtFQUVBLDJCQUFBO0VBQ0EsYUFBQTtBQ0NGOztBRENBO0VBQ0UsYUFBQTtFQUNBLGlFQUFBO0FDRUY7O0FEQUE7RUFDRSxrQkFBQTtBQ0dGIiwiZmlsZSI6InNyYy9hcHAvZW1haWwtcGFnZS9lbWFpbC1wYWdlLmNvbXBvbmVudC5zYXNzIiwic291cmNlc0NvbnRlbnQiOlsiaW5wdXRbdHlwZT1lbWFpbF1cclxuICBoZWlnaHQ6IDJyZW1cclxuICBib3JkZXI6IDBcclxuICB3aWR0aDogY2FsYygxMDAlIC0gMnB4KVxyXG4gIG1heC13aWR0aDogMjRyZW1cclxuICBmb250LXNpemU6IDJyZW1cclxuICBsaW5lLWhlaWdodDogM1xyXG4gIG1hcmdpbi1sZWZ0OiAxcHhcclxuICBib3gtc2hhZG93OiAtMXB4IDJweCAwcHggLTFweCAjODQ4NDg0LCAxcHggMnB4IDBweCAtMXB4ICM4NDg0ODRcclxuICAtd2Via2l0LXRyYW5zaXRpb246IGJveC1zaGFkb3cgMC4zc1xyXG4gIHRyYW5zaXRpb246IGJveC1zaGFkb3cgMC4zc1xyXG4gIG91dGxpbmU6IG5vbmVcclxuXHJcbmlucHV0W3R5cGU9dGV4dF06Zm9jdXNcclxuICBvdXRsaW5lOiBub25lXHJcbiAgYm94LXNoYWRvdzogLThweCAxMHB4IDBweCAtN3B4ICM0RUE2RUEsIDhweCAxMHB4IDBweCAtN3B4ICM0RUE2RUFcclxuXHJcbnBcclxuICBmb250LXNpemU6IDEuMjVyZW1cclxuIiwiaW5wdXRbdHlwZT1lbWFpbF0ge1xuICBoZWlnaHQ6IDJyZW07XG4gIGJvcmRlcjogMDtcbiAgd2lkdGg6IGNhbGMoMTAwJSAtIDJweCk7XG4gIG1heC13aWR0aDogMjRyZW07XG4gIGZvbnQtc2l6ZTogMnJlbTtcbiAgbGluZS1oZWlnaHQ6IDM7XG4gIG1hcmdpbi1sZWZ0OiAxcHg7XG4gIGJveC1zaGFkb3c6IC0xcHggMnB4IDBweCAtMXB4ICM4NDg0ODQsIDFweCAycHggMHB4IC0xcHggIzg0ODQ4NDtcbiAgLXdlYmtpdC10cmFuc2l0aW9uOiBib3gtc2hhZG93IDAuM3M7XG4gIHRyYW5zaXRpb246IGJveC1zaGFkb3cgMC4zcztcbiAgb3V0bGluZTogbm9uZTtcbn1cblxuaW5wdXRbdHlwZT10ZXh0XTpmb2N1cyB7XG4gIG91dGxpbmU6IG5vbmU7XG4gIGJveC1zaGFkb3c6IC04cHggMTBweCAwcHggLTdweCAjNEVBNkVBLCA4cHggMTBweCAwcHggLTdweCAjNEVBNkVBO1xufVxuXG5wIHtcbiAgZm9udC1zaXplOiAxLjI1cmVtO1xufSJdfQ== */"] });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgIf"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgForm"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgModel"]], styles: ["input[type=email][_ngcontent-%COMP%] {\n  height: 2rem;\n  border: 0;\n  width: calc(100% - 2px);\n  max-width: 24rem;\n  font-size: 2rem;\n  line-height: 3;\n  margin-left: 1px;\n  box-shadow: -1px 2px 0px -1px #848484, 1px 2px 0px -1px #848484;\n  transition: box-shadow 0.3s;\n  outline: none;\n}\n\ninput[type=text][_ngcontent-%COMP%]:focus {\n  outline: none;\n  box-shadow: -8px 10px 0px -7px #4EA6EA, 8px 10px 0px -7px #4EA6EA;\n}\n\np[_ngcontent-%COMP%] {\n  font-size: 1.25rem;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZW1haWwtcGFnZS9DOlxcVXNlcnNcXE5pbHNcXFByb2plY3RzXFxsYWF0LnNob3BcXGxhYXQvc3JjXFxhcHBcXGVtYWlsLXBhZ2VcXGVtYWlsLXBhZ2UuY29tcG9uZW50LnNhc3MiLCJzcmMvYXBwL2VtYWlsLXBhZ2UvZW1haWwtcGFnZS5jb21wb25lbnQuc2FzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFlBQUE7RUFDQSxTQUFBO0VBQ0EsdUJBQUE7RUFDQSxnQkFBQTtFQUNBLGVBQUE7RUFDQSxjQUFBO0VBQ0EsZ0JBQUE7RUFDQSwrREFBQTtFQUVBLDJCQUFBO0VBQ0EsYUFBQTtBQ0NGOztBRENBO0VBQ0UsYUFBQTtFQUNBLGlFQUFBO0FDRUY7O0FEQUE7RUFDRSxrQkFBQTtBQ0dGIiwiZmlsZSI6InNyYy9hcHAvZW1haWwtcGFnZS9lbWFpbC1wYWdlLmNvbXBvbmVudC5zYXNzIiwic291cmNlc0NvbnRlbnQiOlsiaW5wdXRbdHlwZT1lbWFpbF1cclxuICBoZWlnaHQ6IDJyZW1cclxuICBib3JkZXI6IDBcclxuICB3aWR0aDogY2FsYygxMDAlIC0gMnB4KVxyXG4gIG1heC13aWR0aDogMjRyZW1cclxuICBmb250LXNpemU6IDJyZW1cclxuICBsaW5lLWhlaWdodDogM1xyXG4gIG1hcmdpbi1sZWZ0OiAxcHhcclxuICBib3gtc2hhZG93OiAtMXB4IDJweCAwcHggLTFweCAjODQ4NDg0LCAxcHggMnB4IDBweCAtMXB4ICM4NDg0ODRcclxuICAtd2Via2l0LXRyYW5zaXRpb246IGJveC1zaGFkb3cgMC4zc1xyXG4gIHRyYW5zaXRpb246IGJveC1zaGFkb3cgMC4zc1xyXG4gIG91dGxpbmU6IG5vbmVcclxuXHJcbmlucHV0W3R5cGU9dGV4dF06Zm9jdXNcclxuICBvdXRsaW5lOiBub25lXHJcbiAgYm94LXNoYWRvdzogLThweCAxMHB4IDBweCAtN3B4ICM0RUE2RUEsIDhweCAxMHB4IDBweCAtN3B4ICM0RUE2RUFcclxuXHJcbnBcclxuICBmb250LXNpemU6IDEuMjVyZW1cclxuIiwiaW5wdXRbdHlwZT1lbWFpbF0ge1xuICBoZWlnaHQ6IDJyZW07XG4gIGJvcmRlcjogMDtcbiAgd2lkdGg6IGNhbGMoMTAwJSAtIDJweCk7XG4gIG1heC13aWR0aDogMjRyZW07XG4gIGZvbnQtc2l6ZTogMnJlbTtcbiAgbGluZS1oZWlnaHQ6IDM7XG4gIG1hcmdpbi1sZWZ0OiAxcHg7XG4gIGJveC1zaGFkb3c6IC0xcHggMnB4IDBweCAtMXB4ICM4NDg0ODQsIDFweCAycHggMHB4IC0xcHggIzg0ODQ4NDtcbiAgLXdlYmtpdC10cmFuc2l0aW9uOiBib3gtc2hhZG93IDAuM3M7XG4gIHRyYW5zaXRpb246IGJveC1zaGFkb3cgMC4zcztcbiAgb3V0bGluZTogbm9uZTtcbn1cblxuaW5wdXRbdHlwZT10ZXh0XTpmb2N1cyB7XG4gIG91dGxpbmU6IG5vbmU7XG4gIGJveC1zaGFkb3c6IC04cHggMTBweCAwcHggLTdweCAjNEVBNkVBLCA4cHggMTBweCAwcHggLTdweCAjNEVBNkVBO1xufVxuXG5wIHtcbiAgZm9udC1zaXplOiAxLjI1cmVtO1xufSJdfQ== */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](EmailPageComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
                 templateUrl: './email-page.component.html',
                 styleUrls: ['./email-page.component.sass']
             }]
-    }], null, null); })();
+    }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"] }]; }, null); })();
 
 
 /***/ }),
@@ -291,12 +299,16 @@ class HomeComponent {
     constructor(router) {
         this.router = router;
     }
+    scrollTop() {
+        this.router.navigate(['']);
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
     navigateToEmailpage() {
         this.router.navigate(['about']);
     }
 }
 HomeComponent.ɵfac = function HomeComponent_Factory(t) { return new (t || HomeComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"])); };
-HomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: HomeComponent, selectors: [["app-home"]], decls: 87, vars: 0, consts: [[1, "header-container"], [1, "header-logo"], [1, "btn", "header-btn", 3, "click"], [1, "header-container", "mt-0"], [1, "container"], [1, "flex-row-container", "m-10", "mt-0"], [1, "col-6", "col-sm-12", "pr-4"], [1, "col-12", "relative", "flex-center-sm"], [1, "btn", 3, "click"], [1, "col-6", "pl-4", "col-sm-12", "flex-center-sm"], ["src", "../assets/young-lady-looking-at-her-phone-and-does-not-notice-futuristic-tv-on-wall.svg", "alt", "Kiwi standing on oval", 1, "col-12"], [1, "container", "background-light-gray"], [1, "flex-row-container", "flex-direction-column-reverse-sm", "m-10"], [1, "col-6", "pr-4", "col-sm-12", "flex-center-sm"], ["src", "../assets/guy-leaning-on-a-post.svg", "alt", "Kiwi standing on oval", 1, "col-12"], [1, "col-6", "pl-4", "col-sm-12"], ["src", "../assets/guy-looking-at-a-black-mirror.svg", "alt", "Kiwi standing on oval", 1, "col-12"], ["src", "../assets/lady-looking-at-tablet.svg", "alt", "Kiwi standing on oval", 1, "col-12"], ["src", "../assets/matrix-guy.svg", "alt", "Kiwi standing on oval", 1, "col-12"], [1, "background-light-gray", 2, "padding-top", "10rem"], [1, "flex-row-container", "mt-0"], [1, "col-12", "flex-center"], ["src", "../assets/guy-patting-a-macbook.svg", "alt", "Kiwi standing on oval", 1, "col-12"], [1, "flex-row-container", "pb-10", "mt-0"], [1, "col-12"], [2, "text-align", "center"], [1, "col-12", "relative", "flex-center"], [2, "margin-block-start", "0"], [1, "header-logo", 2, "padding-bottom", "1.5rem"]], template: function HomeComponent_Template(rf, ctx) { if (rf & 1) {
+HomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: HomeComponent, selectors: [["app-home"]], decls: 87, vars: 0, consts: [[1, "header-container"], [1, "header-logo"], [1, "btn", "header-btn", 3, "click"], [1, "header-container", "mt-0"], [1, "container"], [1, "flex-row-container", "m-10", "mt-0"], [1, "col-6", "col-sm-12", "pr-4"], [1, "col-12", "relative", "flex-center-sm"], [1, "btn", 3, "click"], [1, "col-6", "pl-4", "col-sm-12", "flex-center-sm"], ["src", "../assets/young-lady-looking-at-her-phone-and-does-not-notice-futuristic-tv-on-wall.svg", "alt", "Kiwi standing on oval", 1, "col-12"], [1, "container", "background-light-gray"], [1, "flex-row-container", "flex-direction-column-reverse-sm", "m-10"], [1, "col-6", "pr-4", "col-sm-12", "flex-center-sm"], ["src", "../assets/guy-leaning-on-a-post.svg", "alt", "Kiwi standing on oval", 1, "col-12"], [1, "col-6", "pl-4", "col-sm-12"], ["src", "../assets/guy-looking-at-a-black-mirror.svg", "alt", "Kiwi standing on oval", 1, "col-12"], ["src", "../assets/lady-looking-at-tablet.svg", "alt", "Kiwi standing on oval", 1, "col-12"], ["src", "../assets/matrix-guy.svg", "alt", "Kiwi standing on oval", 1, "col-12"], [1, "background-light-gray", 2, "padding-top", "10rem"], [1, "flex-row-container", "mt-0"], [1, "col-12", "flex-center"], ["src", "../assets/guy-patting-a-macbook.svg", "alt", "Kiwi standing on oval", 1, "col-12"], [1, "flex-row-container", "pb-10", "mt-0"], [1, "col-12"], [2, "text-align", "center"], [1, "col-12", "relative", "flex-center"], [2, "margin-block-start", "0"], [1, "header-logo", 2, "padding-bottom", "1.5rem", 3, "click"]], template: function HomeComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "h1", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " LAAT ");
@@ -446,6 +458,7 @@ HomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](84, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](85, "h1", 28);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function HomeComponent_Template_h1_click_85_listener() { return ctx.scrollTop(); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](86, " LAAT ");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
