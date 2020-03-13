@@ -13161,7 +13161,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       var symbolPrototype = SymbolWrapper.prototype = NativeSymbol.prototype;
       symbolPrototype.constructor = SymbolWrapper;
       var symbolToString = symbolPrototype.toString;
-      var native = String(NativeSymbol('test')) == 'Symbol(test)';
+
+      var _native = String(NativeSymbol('test')) == 'Symbol(test)';
+
       var regexp = /^Symbol\((.*)\)[^)]+$/;
       defineProperty(symbolPrototype, 'description', {
         configurable: true,
@@ -13169,7 +13171,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var symbol = isObject(this) ? this.valueOf() : this;
           var string = symbolToString.call(symbol);
           if (has(EmptyStringDescriptionStore, symbol)) return '';
-          var desc = native ? string.slice(7, -1) : string.replace(regexp, '$1');
+          var desc = _native ? string.slice(7, -1) : string.replace(regexp, '$1');
           return desc === '' ? undefined : desc;
         }
       });
@@ -16089,8 +16091,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 _iteratorError = err;
               } finally {
                 try {
-                  if (!_iteratorNormalCompletion && _iterator.return != null) {
-                    _iterator.return();
+                  if (!_iteratorNormalCompletion && _iterator["return"] != null) {
+                    _iterator["return"]();
                   }
                 } finally {
                   if (_didIteratorError) {
@@ -16191,8 +16193,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 _iteratorError2 = err;
               } finally {
                 try {
-                  if (!_iteratorNormalCompletion2 && _iterator2.return != null) {
-                    _iterator2.return();
+                  if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
+                    _iterator2["return"]();
                   }
                 } finally {
                   if (_didIteratorError2) {
@@ -19047,7 +19049,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   /***/
   function _(module, exports, __webpack_require__) {
     __webpack_require__(
-    /*! C:\Users\Nils\Projects\shop-generator-product-page\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\es5-polyfills.js */
+    /*! C:\Users\Nils\Projects\laat.shop\laat\node_modules\@angular-devkit\build-angular\src\angular-cli-files\models\es5-polyfills.js */
     "./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/es5-polyfills.js");
 
     __webpack_require__(
@@ -19055,7 +19057,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     "./node_modules/zone.js/dist/zone-legacy.js");
 
     module.exports = __webpack_require__(
-    /*! C:\Users\Nils\Projects\shop-generator-product-page\src\polyfills.ts */
+    /*! C:\Users\Nils\Projects\laat.shop\laat\src\polyfills.ts */
     "./src/polyfills.ts");
     /***/
   }
